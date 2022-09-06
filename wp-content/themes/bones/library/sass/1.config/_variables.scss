@@ -1,15 +1,17 @@
 // Colors
-$color-primary:     #000000;
-$color-secondary:   #FFFFFF;
+$color-primary:     #2E307B;
+$color-secondary:   #09949F;
 
 $gray:              #f4f4f4;
 $white:             #FFFFFF;
-$black:             #000000;
+$black:             #20212D;
+$yellow:            #C7A722;
+$green:             #4AACB3;
 
 
 
 // Objects
-$text-color:          $color-primary;
+$text-color:          #787878;
 $link-color:          $color-primary;
 $link-hover-color:    darken($color-primary, 10%);
 
@@ -18,8 +20,8 @@ $btn-color-primary:   $color-secondary;
 
 
 // Typography
-$font-primary:        'Product sans', sans-serif;
-$font-secondary:      '', sans-serif;
+$font-primary:        'Poppins', sans-serif;
+$font-secondary:      'Montserrat', sans-serif;
 
 
 

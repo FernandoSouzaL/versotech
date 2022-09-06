@@ -1,0 +1,106 @@
+.c-single-blog {
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-gap: 0 clamp(20px, 9vw, 100px);
+
+        @include below($md-max) {
+            grid-gap: 0 clamp(20px, 9vw, 45px);
+        }
+
+        @include below($sm-max) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__left {
+        grid-column: span 1;
+    }
+
+    &__middle {
+        grid-column: span 7;
+
+        @include below($sm-max) {
+            order: 3;
+            grid-column: span 2;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 30px;
+            color: $black;
+            font-weight: 800;
+        }
+    }
+
+    &__right {
+        grid-column: span 2;
+
+        @include below($sm-max) {
+            order: 2;
+            grid-column: span 1;
+        }
+    }
+
+    &__cats {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #DDDDDD;
+        margin-bottom: clamp(50px, 9vw, 100px);
+    }
+
+    &__data {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #DDDDDD;
+        margin-bottom: clamp(50px, 9vw, 100px);
+    }
+
+    &__author {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #DDDDDD;
+
+        @include below($sm-max) {
+            margin-bottom: clamp(50px, 9vw, 100px);
+        }
+    }
+
+    &__list {
+        list-style: none;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #DDDDDD;
+
+        &-item {
+            margin: 10px 0;
+        }
+
+        a {
+            color: $color-secondary;
+            font-weight: 600;
+        }
+    }
+
+    &__footer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+
+        @include below($xs-max) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__share {
+        display: flex;
+        align-items: center;
+
+        .a2a_svg {
+            border-radius: 50% !important;
+        }
+
+        h3 {
+            margin-right: 10px;
+        }
+    }
+}

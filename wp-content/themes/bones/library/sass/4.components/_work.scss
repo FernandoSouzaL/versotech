@@ -1,0 +1,65 @@
+.c-work {
+    &__title {
+        margin-top: clamp(50px, 7vw, 80px);
+        margin-bottom: 60px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        
+        @include above($md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &--secondary {
+            margin-top: 0;
+        }
+
+        div {
+            @include above($md) {
+                padding-left: 50px;
+            }
+
+            &:last-child {
+                padding-left: 0;
+            }
+        }
+
+        h2,
+        p {
+            margin: 0;
+        }
+    }
+
+    &__gallery {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 20px;
+
+        @include above($sm) {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            grid-column: span 2;
+
+            &:nth-child(1),
+            &:nth-child(2) {
+                grid-column: span 3;
+            }
+        }
+    }
+
+    &__bg {
+        padding-bottom: 100px !important;
+    }
+
+    &__item {
+        background-color: $white;
+        padding: 40px;
+        border-radius: 20px;
+    }
+}

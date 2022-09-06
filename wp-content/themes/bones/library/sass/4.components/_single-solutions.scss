@@ -1,0 +1,94 @@
+.c-single-solutions {
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: clamp(30px, 13vw, 50px);
+
+        @include above($md) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: clamp(30px, 13vw, 130px);
+        }
+
+        &--secondary {
+            grid-gap: clamp(30px, 13vw, 60px);
+            margin-bottom: clamp(50px, 9vw, 100px);
+        }
+    }
+
+    &--p-left {
+        @include above($sm) {
+            padding-left: 50px;
+        }
+    }
+
+    &__numbers {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px clamp(30px, 20vw, 20px);
+        position: relative;
+        z-index: 2;
+
+        @include above($sm) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        &-btn {
+            position: relative;
+            z-index: 2;
+            margin-top: 40px;
+        }
+    }
+
+    &__item {
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 5px;
+            margin-top: 0;
+        }
+    }
+
+    &__gallery {
+        width: 100%;
+        max-width: 610px;
+
+        &-item {
+            img {
+                width: 100%;
+                height: 405px;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+
+    &__block {
+        margin: 5px;
+        margin-left: 25px;
+        padding: 40px;
+        border-radius: 20px;
+        background-color: $white;
+        border: 1px solid rgba($gray, .8);
+        transition: $transition-default;
+
+        &:hover {
+            background-color: $color-primary;
+
+            h3,
+            p {
+                color: $white;
+            }
+        }
+
+        &-img {
+            height: 43px;
+            margin-bottom: 25px;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+}

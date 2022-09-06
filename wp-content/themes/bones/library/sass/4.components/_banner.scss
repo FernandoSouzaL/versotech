@@ -1,0 +1,58 @@
+.c-banner {
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color-primary, .92);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    &__container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+    }
+
+    &__btn {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 50px;
+        z-index: 3;
+    }
+
+    &--large {
+        height: 1080px;
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 97px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="97.002" viewBox="0 0 1920 97.002"><path id="Exclusão_7" data-name="Exclusão 7" d="M1920,97H0V0H360.2c4.683.031,29.851.23,65.49,1.053,36.232.836,91.345,2.51,148.139,5.738,63.827,3.627,116.71,8.437,157.181,14.295,24.03,3.478,43.9,7.369,59.042,11.566a152.27,152.27,0,0,1,20.62,7.1c5.792,2.566,10.218,5.277,13.156,8.057A114.06,114.06,0,0,0,840.186,60.59a140.946,140.946,0,0,0,18.1,9.855,193.425,193.425,0,0,0,37.87,12.434A272.288,272.288,0,0,0,953.768,89.2c3.938,0,6.211-.11,6.232-.111s2.272.113,6.229.113a272.276,272.276,0,0,0,57.616-6.326,193.432,193.432,0,0,0,37.871-12.434,140.928,140.928,0,0,0,18.1-9.855,114.036,114.036,0,0,0,16.357-12.783c2.935-2.776,7.354-5.484,13.136-8.048a151.981,151.981,0,0,1,20.582-7.092c15.12-4.193,34.949-8.081,58.933-11.558,40.41-5.857,93.214-10.666,156.946-14.3,56.754-3.232,111.865-4.911,148.1-5.751C1531.691.187,1557.126.017,1559.8,0H1920V97Z" transform="translate(0 0.001)" fill="%23fff"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 2;
+        }
+    }
+
+    &--small {
+        height: 470px;
+
+        .c-banner__txt {
+            margin-top: 100px;
+        }
+    }
+}

@@ -1,0 +1,105 @@
+.c-versotech {
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 90px;
+        margin-top: 30px;
+        margin-bottom: 60px;
+
+        &--secondary {
+            margin-bottom: 0;
+        }
+
+        @include below($lg) {
+            grid-gap: 50px;
+        }
+
+        @include below($md-max) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 30px;
+        }
+
+        @include below($sm-max) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include below($xs-max) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__item {
+        &-img {
+            height: 39px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 22px;
+        }
+
+        span {
+            display: inline-block;
+            margin-right: 14px;
+        }
+
+        p,
+        h3 {
+            margin: 0;
+        }
+    }
+
+    &__culture {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px clamp(30px, 12vw, 135px);
+        margin-top: 50px;
+
+        @include below($sm-max) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include below($xs-max) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        &-ico {
+            display: flex;
+            justify-content: center;
+            height: 47px;
+            margin-bottom: 12px;
+        }
+
+        &-ttl {
+            position: relative;
+            padding-bottom: 10px;
+
+            &::after {
+                content: '';
+                width: 45px;
+                height: 3px;
+                border-radius: 5px;
+                background-color: $color-secondary;
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    &__structure {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: clamp(30px, 12vw, 60px);
+        align-items: center;
+
+        @include above($md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &-text {
+            @include above($md) {
+                padding-left: 50px;
+            }
+        }
+    }
+}

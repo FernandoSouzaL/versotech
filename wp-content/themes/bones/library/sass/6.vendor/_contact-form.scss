@@ -6,10 +6,10 @@
   .wpcf7-list-item-label {
     position: relative;
     display: block;
-    line-height: 1.4;
-    padding-left: 25px;
+    line-height: 1.7;
+    padding-left: 35px;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
     color: $text-color;
 
     &::after, 
@@ -25,18 +25,19 @@
       height: 20px;
       width: 20px;
       border-radius: 5px;
-      background-color: $gray;
+      background-color: $white;
+      border: 2px solid #DDDDDD;
     }
 
     &::after {
-      top: 6px;
-      left: 3px;
-      width: 14px;
-      height: 13px;
-      background-color: $color-primary;
+      top: 7px;
+      left: 4px;
+      width: 16px;
+      height: 14px;
+      background-color: $yellow;
       opacity: 0;
       transition: $transition-default;
-      border-radius: 4px;
+      border-radius: 2px;
     }
   }
 
@@ -45,18 +46,18 @@
   }
 
   label a {
-      color: $color-primary;
+      color: $yellow;
       text-decoration: underline;
-      font-weight: 700;
+      font-weight: 600;
 
       &:hover {
-          color: $link-hover-color;
+          color: $yellow;
       }
   }
 }
 
 .wpcf7-spinner {
-  background-color: $gray !important;
+  background-color: transparent !important;
   margin: 1em auto;
   display: flex;
 
@@ -69,7 +70,7 @@
     width: 16px !important;
     height: 16px !important;
     border: 4px solid $color-secondary !important;
-    border-color: $color-primary $color-primary transparent transparent !important;
+    border-color: $yellow $yellow transparent transparent !important;
     animation: spin 1.2s linear infinite !important;
     transform-origin: unset !important;
   }

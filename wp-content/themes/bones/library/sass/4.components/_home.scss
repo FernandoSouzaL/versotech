@@ -1,0 +1,33 @@
+.c-home {
+    &__title {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+
+        @include below($sm) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        p {
+            margin-top: 0;
+
+            @include below($sm) {
+                text-align: center;
+            }
+        }
+    }
+
+    &__slider {
+        margin-top: 45px !important;
+        margin-bottom: clamp(50px, 12vw, 125px) !important;
+
+        &-2 {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    &__blog {
+        margin-top: 65px;
+        margin-bottom: 50px;
+    }
+}

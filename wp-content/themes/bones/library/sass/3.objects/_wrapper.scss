@@ -4,4 +4,8 @@
   box-sizing: border-box;
 
   @include wrapper(1280, 5);
+  @include wrapper(1180, 5);
+  @include wrapper(1060, 5);
+  @include wrapper(1040, 5);
+  @include wrapper(410, 5);
 }

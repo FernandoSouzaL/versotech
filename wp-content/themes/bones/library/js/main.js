@@ -1,35 +1,128 @@
+import { CountUp } from './countUp.min.js';
+
 jQuery(document).ready(function ($) {
 
   // Slides
-  var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 'auto',
-    centeredSlides: true,
-    paginationClickable: true,
-    //spaceBetween: 5000,
-    autoplay: {
-      delay: 8000,
-    },
+  var swiper = new Swiper('.js-slider-has-erp', {
+    slidesPerView: 4,
+    spaceBetween: 99,
+    watchOverflow: true,
     pagination: {
-      el: '.swiper-container .swiper-pagination',
+      el: '.js-slider-has-erp .swiper-pagination',
       type: 'bullets',
       clickable: true,
     },
-    navigation: {
-      nextEl: ".swiper-container .swiper-button-next",
-      prevEl: ".swiper-container .swiper-button-prev",
+    breakpoints: {
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 40
+        },
+        600: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+    }
+  });
+
+  var swiper = new Swiper('.js-slider-not-erp', {
+    slidesPerView: 4,
+    spaceBetween: 99,
+    watchOverflow: true,
+    pagination: {
+      el: '.js-slider-not-erp .swiper-pagination',
+      type: 'bullets',
+      clickable: true,
     },
-    //loop: true,
-    // breakpoints: {
-    //     // when window width is <= 320px
-    //     1024: {
-    //       slidesPerView: 2,
-    //     },
-    //     // when window width is <= 480px
-    //     768: {
-    //       slidesPerView: 1,
-    //       spaceBetween: 20
-    //     }
-    //   }
+    breakpoints: {
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 40
+      },
+      600: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+    }
+  });
+
+  var swiper = new Swiper('.js-slider-clients', {
+    slidesPerView: 5,
+    spaceBetween: 30,
+    watchOverflow: true,
+    pagination: {
+      el: '.js-slider-clients .swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
+    breakpoints: {
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 40
+      },
+      600: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+    }
+  });
+
+  var swiper = new Swiper('.js-slider-testimonial', {
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    watchOverflow: true,
+    pagination: {
+      el: '.js-slider-testimonial .swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    }
+  });
+
+  var swiper = new Swiper('.js-slider-gallery', {
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    watchOverflow: true,
+    pagination: {
+      el: '.js-slider-gallery .swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    }
+  });
+
+  var swiper = new Swiper('.js-slider-solution', {
+    slidesPerView: 3,
+    watchOverflow: true,
+    pagination: {
+      el: '.js-slider-solution .swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
+    breakpoints: {
+      1023: {
+        slidesPerView: 2,
+      },
+      600: {
+        slidesPerView: 1,
+      },
+    }
+  });
+
+  var swiper = new Swiper('.js-slider-vacancies', {
+    slidesPerView: 3,
+    spaceBetween: 25,
+    watchOverflow: true,
+    pagination: {
+      el: '.js-slider-vacancies .swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
+    breakpoints: {
+      1023: {
+        slidesPerView: 2,
+      },
+      600: {
+        slidesPerView: 1,
+      },
+    }
   });
 
   // Header
@@ -45,7 +138,7 @@ jQuery(document).ready(function ($) {
   });
 
   // Remove action
-  $('.js-no-action').on('click', function(e) {
+  $('.js-no-action> a').on('click', function(e) {
     e.preventDefault();
   });
 
@@ -54,6 +147,101 @@ jQuery(document).ready(function ($) {
     const $html = $('html');
 
     $html.toggleClass('is-active-menu');
+  });
+
+  // Goto
+  $('.js-goto').on('click', function(e) {
+    e.preventDefault();
+    const id = $(this).attr('href');
+    $('html').animate({scrollTop: $(id).offset().top - 50}, 'slow')
+  });
+
+  // Counter Numbers
+  function CounterNumbers() {
+    const options = {
+      duration: 3,
+      useEasing: true,
+      useGrouping: true,
+      separator: ".",
+      decimal: ""
+    };
+
+    const counters = document.querySelectorAll(".js-number");
+
+    counters.forEach((item) => {
+      const value = item.dataset.value;
+      const counter = new CountUp(item, value, options);
+      counter.start();
+    });
+  }
+
+  if(document.querySelector(".js-animated-numbers")) {
+    new Waypoint({
+      element: document.querySelector(".js-animated-numbers"),
+      handler: function () {
+        CounterNumbers();
+      },
+      offset: "100%"
+    });
+  }
+
+  // Animeted on scroll
+  $(window).on('scroll', function() {
+    const winHeight = $(this).innerHeight(),
+          winScroll = $(this).scrollTop() + winHeight;
+
+    $('.js-animated').each(function() {
+      const $this = $(this),
+            elTop = $this.offset().top;
+
+      if(winScroll >= elTop + winHeight / 3) {
+        $this.addClass('is-visible');
+      } else {
+        $this.removeClass('is-visible');
+      }
+    });
+  });
+
+  // Animated start
+  function start() {
+    $('.js-animated-start').addClass('is-visible');
+  }
+
+  $(window).on('load', function() {
+    window.setTimeout(function() {
+      start();
+    }, 1000);
+  });
+
+  // Play video yt
+  $('.js-video-player').on('click', function() {
+    const $video = $(this),
+          videoSrc = $video.data('video'),
+          videoPlayer = $video.children('.js-video-play');
+    
+    $video.addClass('is-playing');
+    videoPlayer.attr('src', videoSrc);
+  });
+
+  //modal
+  $('.js-open-modal').on('click', function(e) {
+    e.preventDefault();
+    const id = $(this).attr('href');
+
+    $(id).addClass('is-visible-modal');
+  });
+
+  $('.c-modal').on('click', function(e) {
+    if( $(e.target).is('.js-close-modal') || $(e.target).is('.c-modal') ) {
+      e.preventDefault();
+      $(this).removeClass('is-visible-modal');
+    }
+  });
+
+  $(document).keyup(function(e) {
+    if(e.which=='27'){
+      $('.c-modal').removeClass('is-visible-modal');
+    }
   });
 
   // MASKED INPUT

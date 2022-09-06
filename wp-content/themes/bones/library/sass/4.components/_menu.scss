@@ -19,9 +19,13 @@
         span {
             width: 100%;
             height: 3px;
-            background-color: $white;
+            background-color: $black;
             display: block;
             transition: all .5s ease-out;
+
+            .is-active-menu & {
+                background-color: $white;
+            }
 
             &:nth-child(1) {
                 .is-active-menu & {
@@ -49,7 +53,7 @@
             width: 320px;
             height: 100vh;
             overflow: auto;
-            background-color: $black;
+            background-color: $color-primary;
             position: fixed;
             top: 0;
             right: -100%;
@@ -79,8 +83,62 @@
         transition: $transition-default;
         
         @include above($md) {
+            display: inline-flex;
             margin: 0 1em;
-            padding: 33px 0;
+            padding: 37px 0;          
+        }
+
+        @include below($md-max) {
+            padding: 29px 0;
+        }
+
+        @include below($sm-max) {
+            padding: 0;
+        }
+
+        &--arrow {
+            align-items: center;
+
+            &::after {
+                content: '';
+                width: 8px;
+                height: 10px;
+                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="7.582" height="4.333" viewBox="0 0 7.582 4.333"><path d="M4.117,28.447,1.256,25.432a.71.71,0,0,0-1.041,0,.8.8,0,0,0,0,1.1L2.556,29,.215,31.463a.8.8,0,0,0,0,1.1.71.71,0,0,0,1.041,0l2.861-3.016A.8.8,0,0,0,4.117,28.447Z" transform="translate(32.786 0.001) rotate(90)" fill="%2309949f"/></svg>');
+                background-position: center;
+                background-repeat: no-repeat;
+                margin-left: 5px;
+                transition: $transition-default;
+
+                @include below($sm-max) {
+                    display: none;
+                }
+            }
+
+            @include above($md) {
+                &::before {
+                    content: '';
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    position: absolute;
+                    border-left: 20px solid transparent;
+                    border-right: 20px solid transparent;
+                    border-bottom: 13px solid transparent;
+                    transition: all .5s ease-out;
+                }
+            }
+            
+            &:hover {
+                &::after {
+                    transform: rotate(180deg);
+                }
+
+                @include above($md) {
+                    &::before {
+                        border-bottom-color: $color-secondary;
+                    }
+                }
+            }
         }
 
         .sub-menu & {
@@ -88,8 +146,7 @@
                 padding: 0;
                 margin: 0;
                 margin-bottom: .5em;
-                width: max-content;
-                text-align: left;
+                text-align: center;
             }
 
             .is-active-header & {
@@ -111,7 +168,15 @@
 
         .is-active-header & {
             @include above($md) {
-                padding: 25px 0;
+                padding: 28px 0;
+            }
+
+            @include below($md-max) {
+                padding: 17px 0;
+            }
+
+            @include below($sm-max) {
+                padding: 0;
             }
         }
         
@@ -127,10 +192,14 @@
     }
 
     a {
-        color: $white;
+        color: $black;
         padding-bottom: 4px;
         position: relative;
-
+        
+        @include below($sm-max) {
+            color: $white;
+        }
+        
         @include below($sm-max) {
             margin: 0 20px;
             margin-bottom: 5px;
@@ -144,24 +213,22 @@
             bottom: 0;
             width: 100%;
             height: 2px;
-            background-color: $white;
+            background-color: $yellow;
             transform: scale(0);
             transition: .3s ease-out;
         }
 
         &:hover {
-            color: red ;
-
-            &::after {
-                transform: scale(1);
-            }
+            color: $green;
         }
     }
 
     .sub-menu {
         list-style: none;
-        background-color: $black;
+        background-color: $color-secondary;
         box-sizing: border-box;
+        border-radius: 0 0 10px 10px;
+        margin-bottom: 10px;
         
         @include below($sm-max) {
             padding: 10px 20px;
@@ -178,7 +245,15 @@
             height: 0;
             padding-left: 20px;
             padding-right: 20px;
-            transition: all .5s ease-out;
+            transition: all .5s ease-out;          
+        }
+        
+        a {
+            color: $white;
+
+            &:hover {
+                color: $yellow;
+            }
         }
     }
 
@@ -192,16 +267,66 @@
     }
 
     &__item {
-        padding: 0 1em;
-        border-right: 1px solid $white;
+        padding: 0 79px;
+        position: relative;
+
+        @include below($lg) {
+            padding: 0 49px;
+        }
+
+        @include below($md-max) {
+            padding: 0 19px;
+        }
+
+        @include below($sm-max) {
+            padding: 0 49px;
+        }
+
+        @include below($xs-max) {
+            padding: 0 20px;
+        }
 
         &:first-child {
             padding-left: 0;
         }
+        
+        &.js-no-action {
+            > a {
+                font-weight: bold;
+                padding-bottom: 5px;
+                position: relative;
+                cursor: text;
 
-        &:last-child {
-            padding-right: 0;
-            border: none;
+                &::before {
+                    content: '';
+                    width: 45px;
+                    height: 2px;
+                    border-radius: 5px;
+                    background-color: $color-secondary;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+
+            @include below($xs-max) {
+                &:last-child {
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+
+            &::after {
+                content: '';
+                width: 2px;
+                height: 100%;
+                border-radius: 5px;
+                background-color: rgba($white, .2);
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
         }
     }
 
@@ -212,22 +337,101 @@
     .sub-menu {
         list-style: none;
         margin: 0;
-        margin-top: 5px;
+        margin-top: 10px;
 
         > li {
             padding: 0;
             border: none;
+            margin-bottom: 15px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
+    }
+}
+
+.c-menu-redes {
+    padding-left: 79px;
+
+    @include below($lg) {
+        padding-left: 49px;
+    }
+
+    @include below($md-max) {
+        padding-left: 19px;
+    }
+
+    @include below($sm-max) {
+        padding-left: 49px;
+    }
+
+    @include below($xs-max) {
+        padding-left: 0;
+        margin-top: 50px;
+    }
+
+    &__list {
+        display: flex;
+        list-style: none;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    &__ico {
+        margin-right: 23px;
+
+        @include below($md-max) {
+            margin-right: 13px;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    a {
+        color: $white;
+
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+
+    &__ttl {
+        position: relative;
+        padding-bottom: 5px;
+        margin: 0;
+
+        &::before {
+            content: '';
+            width: 45px;
+            height: 2px;
+            border-radius: 5px;
+            background-color: $color-secondary;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }        
     }
 }
 
 .current-menu-parent >,
 .current-menu-item {
     a {
-        color: red;
+        &,
+        &:hover {
+            color: $yellow !important;
+        } 
 
         &::after {
             transform: scale(1);
         }
+    }
+}
+
+.current-menu-parent {
+    &.c-menu__item--arrow::after {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="7.582" height="4.333" viewBox="0 0 7.582 4.333"><path d="M4.117,28.447,1.256,25.432a.71.71,0,0,0-1.041,0,.8.8,0,0,0,0,1.1L2.556,29,.215,31.463a.8.8,0,0,0,0,1.1.71.71,0,0,0,1.041,0l2.861-3.016A.8.8,0,0,0,4.117,28.447Z" transform="translate(32.786 0.001) rotate(90)" fill="%23C7A722"/></svg>');
     }
 }

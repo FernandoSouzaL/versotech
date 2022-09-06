@@ -1,0 +1,29 @@
+.c-form {
+    &__control {
+        margin-bottom: 17px;
+    }
+
+    &--secondary {
+        input {
+            border-color: $white;
+
+            &,
+            &::placeholder {
+                color: $white;
+            }
+        }
+
+        .wpcf7-list-item-label {
+            color: $white !important;
+
+            &::before {
+                background-color: transparent !important;
+                border-color: $white !important;
+              }
+        }
+
+        label a {
+            color: $white !important;
+        }
+    }
+}

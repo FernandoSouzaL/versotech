@@ -17,6 +17,10 @@ textarea {
 
 html {
   scroll-behavior: smooth;
+
+  &.is-active-menu {
+    overflow: hidden;
+  }
 }
 
 body {

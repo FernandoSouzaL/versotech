@@ -1,0 +1,76 @@
+.c-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, .5);
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    transition: $transition-animations;
+    transform: scale(0);
+
+    &__container {
+        position: absolute;
+        width: auto;
+        max-width: 98%;
+        height: 400px;
+        z-index: 9;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $white;
+        border-radius: 5px;
+        padding: 40px;
+        overflow: auto;
+
+        @include above($sm) {
+            height: 500px;
+        }
+
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+          
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+            border-radius: 5px;
+        }
+           
+        &::-webkit-scrollbar-thumb {
+            background: #969696; 
+            border-radius: 5px;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        z-index: 99;
+        top: 15px;
+        right: 15px;
+        display: block;
+        width: 20px;
+        height: 20px;
+
+        &::before,
+        &::after {
+            content: '';
+            width: 2px;
+            height: 100%;
+            border-radius: 5px;
+            background-color: $black;
+            display: block;
+        }
+
+        &::before {
+            transform: rotate(45deg) translate(6px,-7px);
+        }
+
+        &::after {
+            transform: rotate(-45deg) translate(21px,-8px);
+        }
+    }
+
+    &.is-visible-modal {
+        transform: scale(1);
+    }
+}

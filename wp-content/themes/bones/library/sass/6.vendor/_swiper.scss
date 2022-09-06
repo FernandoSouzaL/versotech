@@ -15,6 +15,11 @@
   display: flex;
   transition-property: transform;
   box-sizing: content-box;
+
+  .swiper-grid-column & {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 }
 
 .swiper-slide {
@@ -22,6 +27,19 @@
   width: 100%;
   position: relative;
   transition-property: transform;
+
+  .swiper-grid-column & {
+    height: calc((100% - 30px) / 2) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.swiper-backface-hidden .swiper-slide {
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .swiper-button {
@@ -67,14 +85,16 @@
 }
 
 .swiper-pagination {
-  display: none;
   text-align: center;
   transition: $transition-default;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 25px;
 
-  @include below($xs-max) {
-    display: block;
+  &--secondary {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    z-index: 3;
   }
 
   &-lock {
@@ -85,13 +105,30 @@
     width: 10px;
     height: 10px;
     display: inline-block;
+    vertical-align: middle;
     border-radius: 50%;
-    background: $color-primary;
+    background: #DDD;
     margin: 0 4px;
-    opacity: .6;
+    opacity: .5;
     
     &-active {
+      background: $yellow;
       opacity: 1;
+      width: 12px;
+      height: 12px;
     }
+  }
+}
+
+.js-slider-gallery {
+  &::after {
+    content: '';
+    width: 100%;
+    height: 98px;
+    background-image: linear-gradient(to bottom, transparent, rgba($black, .60));
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
   }
 }

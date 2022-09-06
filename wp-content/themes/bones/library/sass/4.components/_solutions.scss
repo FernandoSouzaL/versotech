@@ -1,0 +1,95 @@
+.c-solutions {
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 25px;
+        width: 435px;
+        max-width: 100%;
+        margin: 0 auto;
+        margin-bottom: 35px;
+
+        @include below($xs-max) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__ico {
+        width: 65px;
+        height: 65px;
+        border: 2px solid $white;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            background-color: $yellow;
+            border-color: $yellow;
+        }
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: clamp(30px, 12vw, 130px);
+        margin-bottom: clamp(50px, 12vw, 125px);
+        align-items: center;
+
+        @include above($sm) {
+            &:nth-child(odd) {
+                direction: rtl;
+    
+                .c-solutions__txt {
+                    direction: ltr;    
+                }
+            }
+        }
+
+        @include below($xs-max) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__ttl {
+        position: relative;
+        margin-bottom: 35px;
+        
+        span {
+            position: relative;
+            z-index: 2;
+        }
+
+        &::before {
+            content: '';
+            width: 145px;
+            height: 53px;
+            background-color: $color-secondary;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(-15px, -50%);
+            z-index: 1;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+
+        @include above($lg) {
+            flex-direction: row;
+        }
+
+        a {
+           &:first-child {
+                margin-bottom: 20px;
+
+                @include above($lg) {
+                    margin-right: 20px;
+                    margin-bottom: 0;
+                }
+           } 
+        }
+    }
+}

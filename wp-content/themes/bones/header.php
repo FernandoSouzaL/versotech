@@ -40,12 +40,17 @@
 		<!-- swipper -->
 		<script src="<?php echo get_template_directory_uri(); ?>/library/swiper/dist/js/swiper.min.js"></script>
 
+		<!-- Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+		<!-- End: Fonts -->
+
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
 
 	</head>
 
-	<body <?php body_class(); ?> >
+	<body id="initial" <?php body_class(); ?> >
 
 		<header class="c-header js-header">
 
@@ -54,10 +59,7 @@
 		
 					<p class="c-header__logo">
 						<a href="<?php echo home_url(); ?>" rel="nofollow">
-							<svg width="184" height="63">
-								<title><?php bloginfo( 'name' ); ?></title>
-								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logotipo" />
-							</svg>
+							<img src="<?php echo get_template_directory_uri(); ?>/library/images/logotipo.svg" alt="<?php bloginfo( 'name' ); ?>"/>
 						</a>
 					</p>
 		

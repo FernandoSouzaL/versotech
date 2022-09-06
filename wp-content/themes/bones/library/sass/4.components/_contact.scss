@@ -1,0 +1,21 @@
+.c-contact {
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: clamp(30px, 12vw, 130px);
+
+        @include above($sm) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+    }
+
+    &__ico {
+        width: 30px;
+        margin-right: 20px;
+    }
+}

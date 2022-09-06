@@ -1,0 +1,21 @@
+.fade-in {
+    opacity: 0;
+    transition: $transition-animations;
+
+    &-top {
+        transform: translateY(50%);
+    }
+
+    &-right {
+        transform: translateX(-50%);
+    }
+
+    &-time {
+        @include time(.1, 15)
+    }
+
+    .is-visible & {
+        opacity: 1;
+        transform: none;
+    }
+}

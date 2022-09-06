@@ -1,13 +1,50 @@
 .c-footer {
-  background: $black;
+  background: $color-primary;
   display: inline-block;
   width: 100%;
+  padding-top: 45px;
+  padding-bottom: 60px;
+  position: relative;
+  
+  &__container {
+    position: relative;
+    
+    @include above($md) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__menu {
+    @include above($sm) {
+      display: flex;
+    }
+
+    @include below($sm-max) {
+      margin: 50px 0;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 0;
+    transform: translateY(-94px);
+    right: 16.66666666666667%;
+    z-index: 9;
+  }
 
   &__copyright {
-    margin: 2em 0;
+    margin: 0;
+    
+    @include above($md) {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
 
     img {
       top: 0;
+      margin-left: 5px;
       width: 20px;
       height: 30px;
     }

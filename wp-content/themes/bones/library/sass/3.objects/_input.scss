@@ -1,19 +1,19 @@
 .o-input {
   display: block;
   width: 100%;
-  height: 40px;
+  height: 50px;
   color: $color-primary;
   font-size: 1.125rem;
   padding: .25em 2em;
-  border: none;
+  border: 2px solid #DDDDDD;
   border-radius: 25px;
   line-height: 2;
   outline: none;
   box-sizing: border-box;
-  background-color: $gray;
+  background-color: transparent;
 
   &--textarea {
-    min-height: 130px;
+    min-height: 180px;
   }
 
   &--select {
