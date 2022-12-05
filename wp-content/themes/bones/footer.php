@@ -35,6 +35,12 @@
 				</div>
 			</div>
 
+			<div class="c-footer__chat">
+				<a href="#">
+					<img src="<?php echo get_template_directory_uri(); ?>/library/images/chat.png">
+				</a>
+			</div>
+
 		</footer>
 
 		<?php include get_template_directory() . '/partials/svgs.php' ?>

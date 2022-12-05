@@ -11,6 +11,11 @@
         <?php $banner = get_field('banner'); ?>
 		<?php if( $banner ): ?>
 			<section class="c-banner c-banner--large js-animated-start" style="background: url('<?php echo $banner['image'] ?>');">
+				<?php if($banner['has_video']): ?>
+					<video class="c-banner__video" width="1920" height="1080" muted autoplay loop playsinline>
+						<source src="<?php echo $banner['video_id']; ?>" type="video/mp4">
+					</video>
+				<?php endif; ?>
 				<div class="c-banner__container">
 					<div class="o-wrapper o-wrapper--1280">
 						<div class="o-wrapper o-wrapper--1060">

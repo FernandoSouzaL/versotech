@@ -11,11 +11,21 @@
 		<?php $banner = get_field('banner'); ?>
 		<?php if( $banner ): ?>
 			<section class="c-banner c-banner--large js-animated-start" style="background: url('<?php echo $banner['image'] ?>');">
+				<?php if($banner['has_video']): ?>
+					<video class="c-banner__video" width="1920" height="1080" muted autoplay loop playsinline>
+						<source src="<?php echo $banner['video_id']; ?>" type="video/mp4">
+					</video>
+				<?php endif; ?>
 				<div class="c-banner__container">
 					<div class="o-wrapper o-wrapper--1280">
-						<div class="o-wrapper o-wrapper--1060">
-							<div class="c-banner__txt fade-in fade-in-top">
-								<h2 class="o-ttl o-ttl--secondary o-ttl--90 o-ttl--color-secondary o-ttl--extrabold o-ttl--center"><?php echo $banner['title'] ?></h2>
+						<div class="c-banner__content">
+							<svg class="c-banner__detail" width="1280" height="659">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#banner-home-detail" />
+							</svg>
+							<div class="o-wrapper o-wrapper--1060 c-banner__controler">
+								<div class="c-banner__txt fade-in fade-in-top">
+									<h2 class="o-ttl o-ttl--secondary o-ttl--90 o-ttl--color-secondary o-ttl--extrabold o-ttl--center"><?php echo $banner['title'] ?></h2>
+								</div>
 							</div>
 						</div>
 					</div>

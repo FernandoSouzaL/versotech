@@ -45,4 +45,30 @@
       <path id="Caminho_973" data-name="Caminho 973" d="M70,112.077V94.817l11.615,9.829a5.347,5.347,0,0,0,6.939-.012l11.615-9.817v17.26a1.4,1.4,0,0,1-1.394,1.394H71.392A1.4,1.4,0,0,1,70,112.077Zm16.931-9.353L97.992,93.36H72.173l11.063,9.364a2.851,2.851,0,0,0,3.693,0Z" transform="translate(-69.998 -93.36)" fill="#09949f"/>
     </symbol>
 
+    <symbol id="banner-home-detail" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1281 659">
+      <g id="Grupo_2484" data-name="Grupo 2484" transform="translate(-319 -235)">
+        <path id="Caminho_868" data-name="Caminho 868" d="M-12503.75-3816h0l449.75-89.25,1.833,1.333,2.167-1.333,618.167,147.69v2.428l-174.667,281.786-1.75,2.345-1.25-2.345-1.5,3.345-728.6,148.893h-2L-12503.75-3816Z" transform="translate(12927 4179.25)" fill="none" stroke="#fff" stroke-width="1" stroke-dasharray="3" opacity="0.4"/>
+        <g id="Grupo_2256" data-name="Grupo 2256" transform="translate(-80.5 411)">
+          <circle id="Elipse_81" data-name="Elipse 81" cx="5" cy="5" r="5" transform="translate(661.5 443)" fill="#c7a722"/>
+          <text id="VersoVendas" transform="translate(731.5 477)" fill="#fff" font-size="18" font-family="Poppins-SemiBold, Poppins" font-weight="600" letter-spacing="0.02em" opacity="0.6"><tspan x="-126.09" y="0">VersoVendas</tspan></text>
+        </g>
+        <g id="Grupo_2192" data-name="Grupo 2192" transform="translate(813.137 37)">
+          <circle id="Elipse_81-2" data-name="Elipse 81" cx="5" cy="5" r="5" transform="translate(677 381)" fill="#c7a722"/>
+          <text id="VersoCall" transform="translate(786.863 393)" fill="#fff" font-size="18" font-family="Poppins-SemiBold, Poppins" font-weight="600" letter-spacing="0.005em" opacity="0.6"><tspan x="-89.226" y="0">VersoCall</tspan></text>
+        </g>
+        <g id="Grupo_2191" data-name="Grupo 2191" transform="translate(186 -169)">
+          <circle id="Elipse_81-3" data-name="Elipse 81" cx="5" cy="5" r="5" transform="translate(684 437)" fill="#c7a722"/>
+          <text id="VersoCommerce" transform="translate(767 423)" fill="#fff" font-size="18" font-family="Poppins-SemiBold, Poppins" font-weight="600" letter-spacing="0.005em" opacity="0.6"><tspan x="-156.906" y="0">VersoCommerce</tspan></text>
+        </g>
+        <g id="Grupo_2193" data-name="Grupo 2193" transform="translate(631.5 252)">
+          <circle id="Elipse_81-4" data-name="Elipse 81" cx="5" cy="5" r="5" transform="translate(681.5 451)" fill="#c7a722"/>
+          <text id="VersoApp" transform="translate(731.5 485)" fill="#fff" font-size="18" font-family="Poppins-SemiBold, Poppins" font-weight="600" letter-spacing="0.02em" opacity="0.6"><tspan x="-92.286" y="0">VersoApp</tspan></text>
+        </g>
+        <g id="Grupo_2194" data-name="Grupo 2194" transform="translate(-265.5 -78)">
+          <circle id="Elipse_81-5" data-name="Elipse 81" cx="5" cy="5" r="5" transform="translate(684 437)" fill="#c7a722"/>
+          <text id="VersoSAC" transform="translate(675.5 450)" fill="#fff" font-size="18" font-family="Poppins-SemiBold, Poppins" font-weight="600" letter-spacing="0.005em" opacity="0.6"><tspan x="-90.774" y="0">VersoSAC</tspan></text>
+        </g>
+      </g>
+    </symbol>
+
 </svg>

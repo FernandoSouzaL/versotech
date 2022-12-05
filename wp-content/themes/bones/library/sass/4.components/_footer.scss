@@ -49,4 +49,11 @@
       height: 30px;
     }
   }
+
+  &__chat {
+    position: fixed;
+    bottom: 50px;
+    right: 9.66666666666667%;
+    z-index: 99;
+  }
 }

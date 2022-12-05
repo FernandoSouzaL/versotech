@@ -9,7 +9,7 @@
 
   &--90 {
     font-size: clamp(30px, 9vw, 90px);
-    line-height: .8;
+    line-height: 1;
 
     @include below($md) {
       font-size: clamp(30px, 9vw, 70px);

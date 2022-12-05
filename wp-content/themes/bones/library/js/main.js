@@ -48,6 +48,10 @@ jQuery(document).ready(function ($) {
   var swiper = new Swiper('.js-slider-clients', {
     slidesPerView: 5,
     spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+    },
     watchOverflow: true,
     pagination: {
       el: '.js-slider-clients .swiper-pagination',
@@ -153,7 +157,7 @@ jQuery(document).ready(function ($) {
   $('.js-goto').on('click', function(e) {
     e.preventDefault();
     const id = $(this).attr('href');
-    $('html').animate({scrollTop: $(id).offset().top - 50}, 'slow')
+    $('html').animate({scrollTop: $(id).offset().top - 100}, 'slow')
   });
 
   // Counter Numbers
